@@ -1,0 +1,102 @@
+{% extends 'layout.html' %}
+
+{% block title %} Homepage {% endblock %}
+
+{% block main %}
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+            <img src="{{url_for('static', filename='slide1.jpg')}}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block" style="color: white;">
+                <h5>Created to give everyone a voice</h5>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="{{url_for('static', filename='slide2.jpg')}}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block" style="color: white;">
+                <h5>In a simplified way</h5>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{{url_for('static', filename='slide3.jpg')}}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block" style="color: white;">
+                <h5>Make your first news right now!</h5>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<div class="about">
+    <div class="about-text">
+        <h1> About Us</h1>
+        <h2>We are a website focused in tech news</h2>
+        <p>We started with the objective to give the community a louder voice and opinion in the internet
+            so, everyone can make his own article!
+        </p>
+        <h4>From community, to community</h4>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <article class="about col-sm-4">
+                <div class="news-img"></div>
+                <h2>Some text</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi itaque, 
+                    ratione reprehenderit voluptate rerum eius est pariatur 
+                    laborum aut. Iste delectus hic laudantium harum natus nesciunt nihil 
+                    beatae excepturi temporibus.</p>
+                    <a href="#">Read more</a>
+            </article>
+            <article class="about col-4">
+                <div class="news-img"></div>
+                <h2>Some text</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi itaque, 
+                    ratione reprehenderit voluptate rerum eius est pariatur 
+                    laborum aut. Iste delectus hic laudantium harum natus nesciunt nihil 
+                    beatae excepturi temporibus.</p>
+                <a href="#">Read more</a>
+            </article>
+            <article class="about col-4">
+                <div class="news-img"></div>
+                <h2>Some text</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi itaque, 
+                    ratione reprehenderit voluptate rerum eius est pariatur 
+                    laborum aut. Iste delectus hic laudantium harum natus nesciunt nihil 
+                    beatae excepturi temporibus.</p>
+                    <a href="">Read more</a>
+            </article>
+        </div>
+    </div>
+</div>
+{% if allnews[2] %} 
+    <div class="some-news container-fluid">
+        <div class="text-wrapper">
+            <h1>Check out the latest news!</h1>
+            <div class="index-new">
+                <div class="wrapper">
+                    {% for index in range(3) %}
+                        <article>
+                            <div class="new-img"></div>
+                            <h2> {{ allnews[index][0] }} </h2>
+                            <h3> {{ allnews[index][1] }} </h3>
+                            <a href="{{ url_for('page', index=index ) }}" type="button" class="btn btn-primary">Access</a>
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% endblock %}

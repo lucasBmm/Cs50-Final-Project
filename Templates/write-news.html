@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+
+{% block sheet %}
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/news.css') }}">
+{% endblock %}
+{% block title %} Write a New {% endblock %}
+{% block main %}
+    <div class="container-fluid">
+            <div class="news-form">
+                <div id="mydiv" class="alert alert-success alert-dismissible fade show hide" role="alert">
+                    <strong>Sucess!</strong> sending your news to the website...
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <div id="myDIV" class="alert alert-danger alert-dismissible hide">
+                <i class="fas fa-exclamation-triangle"></i>All form must be filled. 
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <h3 style="color: black;padding-top: 20px;">Write a news</h3>
+            <p style="color: black;">* required </p>
+            <form id="form" action="/write" method="post" class="column">
+                <div>
+                    <h3 class="name">Title *</h3>
+                    <input id="title" class="title-form" name="title" type="text" placeholder="Title..">
+                </div>
+                <div>
+                    <h3 class="name">Subtitle</h3>
+                    <input id="subtitle" class="sub-form" name="subtitle" type="text" placeholder="Subtitle..">
+                </div>
+                <div>
+                    <h3 class="name">Content *</h3>
+                    <textarea id="content" cols="40" rows="5" class="content-form" name="content" type="text" placeholder="Content.."></textarea>
+                </div>
+                <div>
+                    <select id="tag" name="tags">
+                        <option disabled selected value="None">Tags</option>
+                            {% for tag in tags %}
+                                <option value="{{ tag }}">{{ tag }}</option>
+                            {% endfor %}
+                        </option>
+                    </select>
+                </div>
+                <input onclick="myFunction()" class="submit-button btn btn-dark" value="submit">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function myFunction() 
+        {
+            title = document.getElementById("title").value;
+            subtitle = document.getElementById("subtitle").value;
+            content = document.getElementById("content").value;
+            tag = document.getElementById("tag").value;
+
+            if (title == null || title == "" || subtitle == null || subtitle == "" || content == null || content == "" || tag == "None")
+            {
+                var element = document.getElementById("myDIV");
+                element.classList.remove("hide");
+                window.scrollTo(0, 0);
+            }
+            else
+            {
+                var element = document.getElementById("mydiv");
+                element.classList.remove("hide");
+                window.scrollTo(0, 0);
+                setTimeout(function(){
+                    document.getElementById("form").submit();
+                }, 2000);
+            }
+        }
+        </script>
+{% endblock %}

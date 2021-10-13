@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block sheet %}
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/news.css') }}">
+{% endblock %}
+
+{% block title %} Contact Us {% endblock %}
+{% block main %}
+    <div class="container-fluid">
+        <div class="news-form">
+            <div id="mydiv" class="alert alert-success alert-dismissible fade show hide" role="alert">
+                <i class="fas fa-check"></i><strong> Sucess!</strong> we'll respond you as soon as possible!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            <div id="myDIV" class="alert alert-danger alert-dismissible hide">
+                <i class="fas fa-exclamation-triangle"></i>All required form must be filled *. 
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <h3 style="color: black;padding-top: 20px;">Contact Us</h3>
+            <form id="form" action="#" class="column">
+                <div>
+                    <h3 class="name">Your Email *</h3>
+                    <input id="title" class="title-form" name="title" type="text" placeholder="Your email">
+                </div>
+                <div>
+                    <h3 class="subtitle">Your Name</h3>
+                    <input id="subtitle" class="sub-form" name="subtitle" type="text" placeholder="Your Name">
+                </div>
+                <div>
+                    <h3 class="content">Your Message *</h3>
+                    <textarea id="content" cols="40" rows="5" class="content-form" name="content" type="text" placeholder="Your Message"></textarea>
+                </div>
+                <input onclick="myFunction()" class="submit-button btn btn-dark" value="submit">
+                <p>* required</p>
+            </form>
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+            title = document.getElementById("title").value;
+            subtitle = document.getElementById("subtitle").value;
+            content = document.getElementById("content").value;
+
+            if (content && title){
+                var element = document.getElementById("mydiv");
+                element.classList.remove("hide");
+                window.scrollTo(0, 0);
+            }else{
+                var element = document.getElementById("myDIV");
+                element.classList.remove("hide");
+                window.scrollTo(0, 0);
+            }
+        }
+        </script>
+{% endblock %}

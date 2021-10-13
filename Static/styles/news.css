@@ -1,0 +1,178 @@
+.empty-data
+{
+    text-align: center;
+    margin-top: 60px;
+}
+.hide
+{
+    display: none;
+}
+.fa-exclamation-triangle
+{
+    margin-right: 10px;
+}
+.close
+{
+    background-color: transparent;
+    border:none;
+    float: right;
+}
+.news-form
+{
+    background-color: white;
+    margin: 20vh 10%;
+    width: 80%;
+    text-align: center;
+    border-radius: 5px;
+    min-height: 80vh;
+}
+.title-form
+{
+    width: 40%;
+    margin: 20px;
+}
+.sub-form
+{
+    width: 40%;
+    margin-bottom: 20px;
+}
+.content-form
+{
+    width: 80%;
+    height: 40vh;
+}
+.image-choose
+{
+    color: black;
+}
+.submit-button
+{
+    background-color: black;
+    color: lightblue;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 20%;
+    outline: none;
+}
+/* News Css */
+.main-page
+{
+    margin-top: 0px;
+    min-height: 80vh;
+}
+.index-news
+{
+    width: 90%;
+    margin-left: 5%;
+    padding: 80px 0px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.index-news article
+{
+    width: 80%;
+    float: left;
+    margin: 0 3%;
+    border-radius: 5px;
+    background-color: rgb(230, 230, 230);
+    margin-bottom: 10vh;
+    height: 50vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.news-img
+{
+    width: 30%;
+    float: left;
+    height: 220px;
+    margin-top: 5%;
+    margin-left: -30px;
+    background: linear-gradient(to right, rgba(79, 172, 254, .8), rgba(0,242,254,.8));
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: lightskyblue;
+    border-radius: 5px;
+}
+.text-part
+{
+    float: left;
+    margin-top: 10%;
+    margin-left: 5%;
+    text-align: left;
+}
+.index-news p
+{
+    margin: 0 0 0 5px;
+    padding-bottom: 0;
+}
+.index-news h2
+{
+    font-weight: 700;
+    font-family: lato;
+    font-size: 20px;
+    padding-bottom: 5px;
+    padding-top: 0px;
+    text-transform: uppercase;
+    color: black;
+}
+.index-news h3
+{
+    font-weight: 400;
+    font-family: lato;
+    font-size: 14px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    text-transform: uppercase;
+    color: black;
+}
+.index-news p
+{
+    font-weight: 400;
+    font-family: lato;
+    font-size: 14px;
+    padding-bottom: 10px;
+    color: black;
+}
+.text-part a
+{
+  background: linear-gradient(to right, rgba(0,242,254,.8), rgba(15, 89, 155, 0.8));
+  outline: none;
+  border:none;
+  margin-bottom: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.index-new button
+{
+  outline: none;
+}
+.index-news h4
+{
+    font-weight: 400;
+    font-family: lato;
+    font-size: 14px;
+    padding-bottom: 10px;
+    color: black;
+    padding: 0px;
+}
+.index-news span
+{
+    background-color: rgb(138, 138, 138);
+    padding: 2px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+form .title-form, .sub-form
+{
+    width: 80%;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+form h3
+{
+    color: black;
+    font-size: 20px;
+    margin: 0px;
+    float: left;
+    margin-left: 10%;
+    margin-right: 32%;
+}
